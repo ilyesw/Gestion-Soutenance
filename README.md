@@ -1,4 +1,4 @@
-<img width="1918" height="1191" alt="image" src="https://github.com/user-attachments/assets/82314d88-fa82-406c-9c4d-e0859f69a365" /># 🎓 GestSoutenance
+# 🎓 GestSoutenance
 
 <div align="center">
 
@@ -20,20 +20,9 @@
 ### 🖼️ Aperçu / Preview
 
 </div>
-
-|                           Page d'accueil / Home                            |                       Liste des étudiants / Students List                        |
-| :------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
-| <img width="1903" height="1199" alt="image" src="https://github.com/user-attachments/assets/75129e1a-199e-4418-9de1-d676e54960e2" />
-) | <img width="1919" height="1052" alt="image" src="https://github.com/user-attachments/assets/63e485ca-9ae1-491b-afc5-4e5dc830d209" />
-) |
-
-|                       Gestion des PFE / PFE Management                        |                            Affectations / Assignments                             |
-| :---------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
-| ![PFE](https://via.placeholder.com/400x250/CC2927/FFFFFF?text=📁+Projets+PFE) | ![Assign](https://via.placeholder.com/400x250/28a745/FFFFFF?text=🔗+Affectations) |
-
-> 💡 _Remplacez ces images par des captures d'écran réelles de votre application_
->
-> 💡 _Replace these images with actual screenshots of your application_
+                         
+<img width="1887" height="1185" alt="image" src="https://github.com/user-attachments/assets/00f1bf0c-13b6-4e57-a0da-1643e94e7921" />
+ 
 
 ---
 
