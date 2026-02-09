@@ -8,9 +8,30 @@
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-LocalDB-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-2022/2026-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+
 **[Français](#-français) | [English](#-english)**
 
+---
+
+### 🖼️ Aperçu / Preview
+
 </div>
+
+|                           Page d'accueil / Home                            |                       Liste des étudiants / Students List                        |
+| :------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
+| ![Home](https://via.placeholder.com/400x250/512BD4/FFFFFF?text=🏠+Accueil) | ![Students](https://via.placeholder.com/400x250/7952B3/FFFFFF?text=👨‍🎓+Étudiants) |
+
+|                       Gestion des PFE / PFE Management                        |                            Affectations / Assignments                             |
+| :---------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
+| ![PFE](https://via.placeholder.com/400x250/CC2927/FFFFFF?text=📁+Projets+PFE) | ![Assign](https://via.placeholder.com/400x250/28a745/FFFFFF?text=🔗+Affectations) |
+
+> 💡 _Remplacez ces images par des captures d'écran réelles de votre application_
+>
+> 💡 _Replace these images with actual screenshots of your application_
 
 ---
 
@@ -32,11 +53,13 @@
 
 ### 🛠️ Technologies Utilisées
 
-- **Framework** : ASP.NET Core MVC (.NET 10)
-- **ORM** : Entity Framework Core (Code First)
-- **Base de données** : SQL Server LocalDB
-- **Frontend** : Bootstrap 5, Razor Views
-- **IDE** : Visual Studio 2022/2026
+| Catégorie          | Technologie                        |
+| ------------------ | ---------------------------------- |
+| 🔧 Framework       | ASP.NET Core MVC (.NET 10)         |
+| 🗄️ ORM             | Entity Framework Core (Code First) |
+| 💾 Base de données | SQL Server LocalDB                 |
+| 🎨 Frontend        | Bootstrap 5, Razor Views           |
+| 🖥️ IDE             | Visual Studio 2022/2026            |
 
 ### 📁 Structure du Projet
 
@@ -113,8 +136,10 @@ GestSoutenance/
 
 ### 📚 Documentation
 
-- 📖 [Guide des Migrations](GUIDE_MIGRATIONS.md)
-- 🧪 [Guide de Test](GUIDE_TEST.md)
+| Document                                       | Description                |
+| ---------------------------------------------- | -------------------------- |
+| 📖 [Guide des Migrations](GUIDE_MIGRATIONS.md) | Commandes Entity Framework |
+| 🧪 [Guide de Test](GUIDE_TEST.md)              | Instructions de test       |
 
 ---
 
@@ -136,11 +161,13 @@ GestSoutenance/
 
 ### 🛠️ Technologies Used
 
-- **Framework**: ASP.NET Core MVC (.NET 10)
-- **ORM**: Entity Framework Core (Code First)
-- **Database**: SQL Server LocalDB
-- **Frontend**: Bootstrap 5, Razor Views
-- **IDE**: Visual Studio 2022/2026
+| Category     | Technology                         |
+| ------------ | ---------------------------------- |
+| 🔧 Framework | ASP.NET Core MVC (.NET 10)         |
+| 🗄️ ORM       | Entity Framework Core (Code First) |
+| 💾 Database  | SQL Server LocalDB                 |
+| 🎨 Frontend  | Bootstrap 5, Razor Views           |
+| 🖥️ IDE       | Visual Studio 2022/2026            |
 
 ### 📁 Project Structure
 
@@ -211,8 +238,10 @@ GestSoutenance/
 
 ### 📚 Documentation
 
-- 📖 [Migration Guide](GUIDE_MIGRATIONS.md)
-- 🧪 [Testing Guide](GUIDE_TEST.md)
+| Document                                  | Description               |
+| ----------------------------------------- | ------------------------- |
+| 📖 [Migration Guide](GUIDE_MIGRATIONS.md) | Entity Framework commands |
+| 🧪 [Testing Guide](GUIDE_TEST.md)         | Testing instructions      |
 
 ---
 
@@ -267,24 +296,42 @@ erDiagram
 
 ---
 
+## 🤝 Contributing / Contribution
+
+Les contributions sont les bienvenues ! / Contributions are welcome!
+
+1. Fork le projet / Fork the project
+2. Créez votre branche / Create your branch (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements / Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Poussez la branche / Push the branch (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request / Open a Pull Request
+
+---
+
 ## 👨‍💻 Author / Auteur
 
-Projet réalisé dans le cadre du cours ASP.NET MVC - ISET 2026
+<div align="center">
+
+Projet réalisé dans le cadre du cours **ASP.NET MVC** - **ISET 2026**
 
 _Project developed as part of the ASP.NET MVC course - ISET 2026_
 
+</div>
+
 ## 📄 License / Licence
 
-**FR** : Projet académique - Usage éducatif uniquement
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-**EN** : Academic project - Educational use only
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-⭐ **Si ce projet vous a aidé, n'hésitez pas à lui donner une étoile !**
+### ⭐ Star this repo if you find it helpful! ⭐
 
-⭐ **If this project helped you, consider giving it a star!**
+**Made with ❤️ using ASP.NET Core MVC**
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=GestSoutenance&label=Visitors&countColor=%23263759)
 
 </div>
