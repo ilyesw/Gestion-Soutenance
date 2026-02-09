@@ -23,7 +23,8 @@
 
 |                           Page d'accueil / Home                            |                       Liste des étudiants / Students List                        |
 | :------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
-| ![Home](https://via.placeholder.com/400x250/512BD4/FFFFFF?text=🏠+Accueil) | ![Students](https://via.placeholder.com/400x250/7952B3/FFFFFF?text=👨‍🎓+Étudiants) |
+| ![Home](<img width="1903" height="1199" alt="image" src="https://github.com/user-attachments/assets/75129e1a-199e-4418-9de1-d676e54960e2" />
+) | ![Students](https://via.placeholder.com/400x250/7952B3/FFFFFF?text=👨‍🎓+Étudiants) |
 
 |                       Gestion des PFE / PFE Management                        |                            Affectations / Assignments                             |
 | :---------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
