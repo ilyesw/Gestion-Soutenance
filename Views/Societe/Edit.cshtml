@@ -1,0 +1,53 @@
+@* ============================================
+    FICHIER : Views/Societe/Edit.cshtml
+    DESCRIPTION : Formulaire pour modifier une société
+    ============================================ *@
+
+@model GestSoutenance.Models.Societe
+
+@{
+    ViewData["Title"] = "Modifier Société";
+}
+
+<h1>Modifier la Société</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="ID" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Lib" class="form-label"></label>
+                <input asp-for="Lib" class="form-control" />
+                <span asp-validation-for="Lib" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Adresse" class="form-label"></label>
+                <input asp-for="Adresse" class="form-control" />
+                <span asp-validation-for="Adresse" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tel" class="form-label"></label>
+                <input asp-for="Tel" class="form-control" />
+                <span asp-validation-for="Tel" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

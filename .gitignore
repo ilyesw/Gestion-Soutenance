@@ -1,0 +1,53 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+**/[Pp]ackages/*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE specific
+.idea/
+*.swp
+*.swo
+*~
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework Migrations
+# (keep Migrations folder but ignore any migration snapshots if needed)
+
+# Local settings
+appsettings.Development.json
+appsettings.Local.json
+
+# Secrets
+secrets.json

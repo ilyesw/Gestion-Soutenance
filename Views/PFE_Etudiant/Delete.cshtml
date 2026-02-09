@@ -1,0 +1,43 @@
+@* ============================================
+    FICHIER : Views/PFE_Etudiant/Delete.cshtml
+    DESCRIPTION : Page de confirmation de suppression
+    ============================================ *@
+
+@model GestSoutenance.Models.PFE_Etudiant
+
+@{
+    ViewData["Title"] = "Supprimer Affectation";
+}
+
+<h1>Supprimer l'Affectation</h1>
+
+<hr />
+
+<div class="alert alert-danger">
+    <strong>Attention !</strong> Êtes-vous sûr de vouloir supprimer cette affectation ?
+</div>
+
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">ID :</dt>
+            <dd class="col-sm-8">@Model.ID</dd>
+
+            <dt class="col-sm-4">PFE :</dt>
+            <dd class="col-sm-8">@(Model.PFE != null ? Model.PFE.Titre : "N/A")</dd>
+
+            <dt class="col-sm-4">Étudiant :</dt>
+            <dd class="col-sm-8">@(Model.Etudiant != null ? Model.Etudiant.NomComplet : "N/A")</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ID" />
+
+    <button type="submit" class="btn btn-danger">Confirmer la Suppression</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

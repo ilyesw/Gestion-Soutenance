@@ -1,0 +1,57 @@
+@* ============================================
+    FICHIER : Views/Enseignant/Index.cshtml
+    DESCRIPTION : Liste de tous les enseignants
+    ============================================ *@
+
+@model IEnumerable<GestSoutenance.Models.Enseignant>
+
+@{
+    ViewData["Title"] = "Liste des Enseignants";
+}
+
+<h1>Liste des Enseignants</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Ajouter un Enseignant
+    </a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enseignant in Model)
+        {
+            <tr>
+                <td>@enseignant.ID</td>
+                <td>@enseignant.Nom</td>
+                <td>@enseignant.Prenom</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@enseignant.ID" class="btn btn-info btn-sm">
+                        Détails
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@enseignant.ID" class="btn btn-warning btn-sm">
+                        Modifier
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@enseignant.ID" class="btn btn-danger btn-sm">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Aucun enseignant trouvé. Cliquez sur "Ajouter un Enseignant" pour en créer un.
+    </div>
+}

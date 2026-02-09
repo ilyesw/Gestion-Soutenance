@@ -1,0 +1,51 @@
+@* ============================================
+    FICHIER : Views/PFE_Etudiant/Index.cshtml
+    DESCRIPTION : Liste des associations PFE-Étudiant
+    ============================================ *@
+
+@model IEnumerable<GestSoutenance.Models.PFE_Etudiant>
+
+@{
+    ViewData["Title"] = "Affectations PFE-Étudiants";
+}
+
+<h1>Affectations PFE - Étudiants</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Nouvelle Affectation
+    </a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>PFE</th>
+            <th>Étudiant</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@(item.PFE != null ? item.PFE.Titre : "N/A")</td>
+                <td>@(item.Etudiant != null ? item.Etudiant.NomComplet : "N/A")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info btn-sm">Détails</a>
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-warning btn-sm">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger btn-sm">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Aucune affectation trouvée. Cliquez sur "Nouvelle Affectation" pour affecter un étudiant à un PFE.
+    </div>
+}

@@ -1,0 +1,65 @@
+@* ============================================
+    FICHIER : Views/Etudiant/Index.cshtml
+    DESCRIPTION : Liste de tous les étudiants
+    ============================================ *@
+
+@* On indique le type de données que la vue reçoit (une liste d'étudiants) *@
+@model IEnumerable<GestSoutenance.Models.Etudiant>
+
+@{
+    ViewData["Title"] = "Liste des Étudiants";
+}
+
+<h1>Liste des Étudiants</h1>
+
+@* Lien pour créer un nouvel étudiant *@
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Ajouter un Étudiant
+    </a>
+</p>
+
+@* Tableau Bootstrap pour afficher les étudiants *@
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de Naissance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Boucle pour afficher chaque étudiant *@
+        @foreach (var etudiant in Model)
+        {
+            <tr>
+                <td>@etudiant.ID</td>
+                <td>@etudiant.Nom</td>
+                <td>@etudiant.Prenom</td>
+                <td>@etudiant.DateNaiss.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @* Liens vers les actions (Détails, Modifier, Supprimer) *@
+                    <a asp-action="Details" asp-route-id="@etudiant.ID" class="btn btn-info btn-sm">
+                        Détails
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@etudiant.ID" class="btn btn-warning btn-sm">
+                        Modifier
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@etudiant.ID" class="btn btn-danger btn-sm">
+                        Supprimer
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* Message si aucun étudiant n'existe *@
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Aucun étudiant trouvé. Cliquez sur "Ajouter un Étudiant" pour en créer un.
+    </div>
+}

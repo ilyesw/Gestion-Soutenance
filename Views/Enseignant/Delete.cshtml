@@ -1,0 +1,45 @@
+@* ============================================
+    FICHIER : Views/Enseignant/Delete.cshtml
+    DESCRIPTION : Page de confirmation de suppression
+    ============================================ *@
+
+@model GestSoutenance.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Supprimer Enseignant";
+}
+
+<h1>Supprimer l'Enseignant</h1>
+
+<hr />
+
+<div class="alert alert-danger">
+    <strong>Attention !</strong> Êtes-vous sûr de vouloir supprimer cet enseignant ?
+</div>
+
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.NomComplet</h5>
+
+        <dl class="row">
+            <dt class="col-sm-5">ID :</dt>
+            <dd class="col-sm-7">@Model.ID</dd>
+
+            <dt class="col-sm-5">Nom :</dt>
+            <dd class="col-sm-7">@Model.Nom</dd>
+
+            <dt class="col-sm-5">Prénom :</dt>
+            <dd class="col-sm-7">@Model.Prenom</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ID" />
+
+    <button type="submit" class="btn btn-danger">Confirmer la Suppression</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

@@ -1,0 +1,55 @@
+@* ============================================
+    FICHIER : Views/PFE/Delete.cshtml
+    DESCRIPTION : Page de confirmation de suppression
+    ============================================ *@
+
+@model GestSoutenance.Models.PFE
+
+@{
+    ViewData["Title"] = "Supprimer PFE";
+}
+
+<h1>Supprimer le PFE</h1>
+
+<hr />
+
+<div class="alert alert-danger">
+    <strong>Attention !</strong> Êtes-vous sûr de vouloir supprimer ce PFE ?
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>@Model.Titre</h5>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID :</dt>
+            <dd class="col-sm-9">@Model.PFEID</dd>
+
+            <dt class="col-sm-3">Titre :</dt>
+            <dd class="col-sm-9">@Model.Titre</dd>
+
+            <dt class="col-sm-3">Date Début :</dt>
+            <dd class="col-sm-9">@Model.DateD.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Date Fin :</dt>
+            <dd class="col-sm-9">@Model.DateF.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Encadrant :</dt>
+            <dd class="col-sm-9">@(Model.Encadrant != null ? Model.Encadrant.NomComplet : "Non assigné")</dd>
+
+            <dt class="col-sm-3">Société :</dt>
+            <dd class="col-sm-9">@(Model.Societe != null ? Model.Societe.Lib : "Non assignée")</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="PFEID" />
+
+    <button type="submit" class="btn btn-danger">Confirmer la Suppression</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

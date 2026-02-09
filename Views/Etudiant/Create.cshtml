@@ -1,0 +1,63 @@
+@* ============================================
+    FICHIER : Views/Etudiant/Create.cshtml
+    DESCRIPTION : Formulaire pour créer un nouvel étudiant
+    ============================================ *@
+
+@model GestSoutenance.Models.Etudiant
+
+@{
+    ViewData["Title"] = "Nouvel Étudiant";
+}
+
+<h1>Ajouter un Étudiant</h1>
+
+<hr />
+
+@* Formulaire de création *@
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            @* Token de protection contre les attaques CSRF *@
+            @Html.AntiForgeryToken()
+
+            @* Affiche les erreurs de validation globales *@
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            @* Champ Nom *@
+            <div class="mb-3">
+                <label asp-for="Nom" class="form-label"></label>
+                <input asp-for="Nom" class="form-control" placeholder="Entrez le nom" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+
+            @* Champ Prénom *@
+            <div class="mb-3">
+                <label asp-for="Prenom" class="form-label"></label>
+                <input asp-for="Prenom" class="form-control" placeholder="Entrez le prénom" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+
+            @* Champ Date de Naissance *@
+            <div class="mb-3">
+                <label asp-for="DateNaiss" class="form-label"></label>
+                <input asp-for="DateNaiss" type="date" class="form-control" />
+                <span asp-validation-for="DateNaiss" class="text-danger"></span>
+            </div>
+
+            @* Boutons *@
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">
+                    Enregistrer
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    Annuler
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@* Scripts de validation côté client *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

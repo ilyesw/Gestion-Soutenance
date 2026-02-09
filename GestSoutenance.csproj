@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!-- ============================================
+       FICHIER : GestSoutenance.csproj
+       DESCRIPTION : Fichier de configuration du projet
+       MISE À JOUR : Compatible avec .NET 10.0
+       ============================================ -->
+
+  <PropertyGroup>
+    <!-- Version du framework .NET 10 (ta version installée) -->
+    <TargetFramework>net10.0</TargetFramework>
+    
+    <!-- Activer les types nullables -->
+    <Nullable>enable</Nullable>
+    
+    <!-- Activer l'analyse du code implicite -->
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- ============================================
+       PACKAGES NUGET NÉCESSAIRES
+       ============================================ -->
+  <ItemGroup>
+    <!-- Entity Framework Core pour SQL Server -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+    
+    <!-- Outils Entity Framework pour les migrations -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    
+    <!-- Design pour les migrations en ligne de commande -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

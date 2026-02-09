@@ -1,0 +1,49 @@
+@* ============================================
+    FICHIER : Views/PFE/Details.cshtml
+    DESCRIPTION : Affiche les détails d'un PFE
+    ============================================ *@
+
+@model GestSoutenance.Models.PFE
+
+@{
+    ViewData["Title"] = "Détails PFE";
+}
+
+<h1>Détails du PFE</h1>
+
+<hr />
+
+<div class="card">
+    <div class="card-header">
+        <h5>@Model.Titre</h5>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID :</dt>
+            <dd class="col-sm-9">@Model.PFEID</dd>
+
+            <dt class="col-sm-3">Titre :</dt>
+            <dd class="col-sm-9">@Model.Titre</dd>
+
+            <dt class="col-sm-3">Description :</dt>
+            <dd class="col-sm-9">@(Model.Desc ?? "Aucune description")</dd>
+
+            <dt class="col-sm-3">Date de Début :</dt>
+            <dd class="col-sm-9">@Model.DateD.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Date de Fin :</dt>
+            <dd class="col-sm-9">@Model.DateF.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Encadrant :</dt>
+            <dd class="col-sm-9">@(Model.Encadrant != null ? Model.Encadrant.NomComplet : "Non assigné")</dd>
+
+            <dt class="col-sm-3">Société :</dt>
+            <dd class="col-sm-9">@(Model.Societe != null ? Model.Societe.Lib : "Non assignée")</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<a asp-action="Edit" asp-route-id="@Model.PFEID" class="btn btn-warning">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

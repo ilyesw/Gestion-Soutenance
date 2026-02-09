@@ -1,0 +1,51 @@
+@* ============================================
+    FICHIER : Views/Societe/Create.cshtml
+    DESCRIPTION : Formulaire pour créer une nouvelle société
+    ============================================ *@
+
+@model GestSoutenance.Models.Societe
+
+@{
+    ViewData["Title"] = "Nouvelle Société";
+}
+
+<h1>Ajouter une Société</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Lib" class="form-label"></label>
+                <input asp-for="Lib" class="form-control" placeholder="Nom de la société" />
+                <span asp-validation-for="Lib" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Adresse" class="form-label"></label>
+                <input asp-for="Adresse" class="form-control" placeholder="Adresse complète" />
+                <span asp-validation-for="Adresse" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tel" class="form-label"></label>
+                <input asp-for="Tel" class="form-control" placeholder="Numéro de téléphone" />
+                <span asp-validation-for="Tel" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

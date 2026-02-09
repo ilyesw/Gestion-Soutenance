@@ -1,0 +1,48 @@
+@* ============================================
+    FICHIER : Views/Societe/Delete.cshtml
+    DESCRIPTION : Page de confirmation de suppression
+    ============================================ *@
+
+@model GestSoutenance.Models.Societe
+
+@{
+    ViewData["Title"] = "Supprimer Société";
+}
+
+<h1>Supprimer la Société</h1>
+
+<hr />
+
+<div class="alert alert-danger">
+    <strong>Attention !</strong> Êtes-vous sûr de vouloir supprimer cette société ?
+</div>
+
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Lib</h5>
+
+        <dl class="row">
+            <dt class="col-sm-4">ID :</dt>
+            <dd class="col-sm-8">@Model.ID</dd>
+
+            <dt class="col-sm-4">Nom :</dt>
+            <dd class="col-sm-8">@Model.Lib</dd>
+
+            <dt class="col-sm-4">Adresse :</dt>
+            <dd class="col-sm-8">@Model.Adresse</dd>
+
+            <dt class="col-sm-4">Téléphone :</dt>
+            <dd class="col-sm-8">@Model.Tel</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ID" />
+
+    <button type="submit" class="btn btn-danger">Confirmer la Suppression</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

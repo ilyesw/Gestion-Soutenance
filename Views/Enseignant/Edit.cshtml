@@ -1,0 +1,47 @@
+@* ============================================
+    FICHIER : Views/Enseignant/Edit.cshtml
+    DESCRIPTION : Formulaire pour modifier un enseignant
+    ============================================ *@
+
+@model GestSoutenance.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Modifier Enseignant";
+}
+
+<h1>Modifier l'Enseignant</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="ID" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Nom" class="form-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prenom" class="form-label"></label>
+                <input asp-for="Prenom" class="form-control" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

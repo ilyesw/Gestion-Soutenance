@@ -1,0 +1,45 @@
+@* ============================================
+    FICHIER : Views/Etudiant/Details.cshtml
+    DESCRIPTION : Affiche les détails d'un étudiant
+    ============================================ *@
+
+@model GestSoutenance.Models.Etudiant
+
+@{
+    ViewData["Title"] = "Détails Étudiant";
+}
+
+<h1>Détails de l'Étudiant</h1>
+
+<hr />
+
+@* Carte Bootstrap pour afficher les informations *@
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.NomComplet</h5>
+
+        <dl class="row">
+            <dt class="col-sm-5">ID :</dt>
+            <dd class="col-sm-7">@Model.ID</dd>
+
+            <dt class="col-sm-5">Nom :</dt>
+            <dd class="col-sm-7">@Model.Nom</dd>
+
+            <dt class="col-sm-5">Prénom :</dt>
+            <dd class="col-sm-7">@Model.Prenom</dd>
+
+            <dt class="col-sm-5">Date de Naissance :</dt>
+            <dd class="col-sm-7">@Model.DateNaiss.ToString("dd/MM/yyyy")</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+@* Liens d'action *@
+<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-warning">
+    Modifier
+</a>
+<a asp-action="Index" class="btn btn-secondary">
+    Retour à la liste
+</a>

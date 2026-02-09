@@ -1,0 +1,78 @@
+@* ============================================
+    FICHIER : Views/PFE/Edit.cshtml
+    DESCRIPTION : Formulaire pour modifier un PFE
+    ============================================ *@
+
+@model GestSoutenance.Models.PFE
+
+@{
+    ViewData["Title"] = "Modifier PFE";
+}
+
+<h1>Modifier le PFE</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+            @* ID caché *@
+            <input type="hidden" asp-for="PFEID" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Titre" class="form-label"></label>
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Desc" class="form-label"></label>
+                <textarea asp-for="Desc" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="DateD" class="form-label"></label>
+                    <input asp-for="DateD" type="date" class="form-control" />
+                    <span asp-validation-for="DateD" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="DateF" class="form-label"></label>
+                    <input asp-for="DateF" type="date" class="form-control" />
+                    <span asp-validation-for="DateF" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="EncadrantID" class="form-label"></label>
+                <select asp-for="EncadrantID" asp-items="ViewBag.EncadrantID" class="form-select">
+                    <option value="">-- Choisir un Encadrant --</option>
+                </select>
+                <span asp-validation-for="EncadrantID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="SocieteID" class="form-label"></label>
+                <select asp-for="SocieteID" asp-items="ViewBag.SocieteID" class="form-select">
+                    <option value="">-- Choisir une Société --</option>
+                </select>
+                <span asp-validation-for="SocieteID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

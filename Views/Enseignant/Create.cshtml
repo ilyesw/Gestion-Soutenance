@@ -1,0 +1,45 @@
+@* ============================================
+    FICHIER : Views/Enseignant/Create.cshtml
+    DESCRIPTION : Formulaire pour créer un nouvel enseignant
+    ============================================ *@
+
+@model GestSoutenance.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Nouvel Enseignant";
+}
+
+<h1>Ajouter un Enseignant</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Nom" class="form-label"></label>
+                <input asp-for="Nom" class="form-control" placeholder="Entrez le nom" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Prenom" class="form-label"></label>
+                <input asp-for="Prenom" class="form-control" placeholder="Entrez le prénom" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

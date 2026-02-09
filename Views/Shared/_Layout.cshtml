@@ -1,0 +1,143 @@
+@* ============================================
+    FICHIER : Views/Shared/_Layout.cshtml
+    DESCRIPTION : Template principal de l'application
+    Ce fichier définit la structure HTML commune à toutes les pages
+    ============================================ *@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    @* Méta-données *@
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @* Titre de la page (dynamique) *@
+    <title>@ViewData["Title"] - GestSoutenance</title>
+
+    @* Feuilles de style Bootstrap (CDN) *@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+
+    @* Icônes Bootstrap (optionnel) *@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" 
+          rel="stylesheet">
+
+    @* Style personnalisé pour le site *@
+    <style>
+        /* Espacement en haut pour la navbar fixe */
+        body {
+            padding-top: 60px;
+        }
+        /* Style du footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    @* ========================================
+       BARRE DE NAVIGATION
+       ======================================== *@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            @* Logo / Nom du site *@
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                🎓 GestSoutenance
+            </a>
+
+            @* Bouton hamburger pour mobile *@
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            @* Liens de navigation *@
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    @* Lien Accueil *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            Accueil
+                        </a>
+                    </li>
+
+                    @* Lien Étudiants *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Etudiant" asp-action="Index">
+                            👨‍🎓 Étudiants
+                        </a>
+                    </li>
+
+                    @* Lien Enseignants *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Enseignant" asp-action="Index">
+                            👨‍🏫 Enseignants
+                        </a>
+                    </li>
+
+                    @* Lien Sociétés *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Societe" asp-action="Index">
+                            🏢 Sociétés
+                        </a>
+                    </li>
+
+                    @* Lien PFE *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="PFE" asp-action="Index">
+                            📋 PFE
+                        </a>
+                    </li>
+
+                    @* Lien Affectations *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="PFE_Etudiant" asp-action="Index">
+                            🔗 Affectations
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @* ========================================
+       CONTENU PRINCIPAL
+       ======================================== *@
+    <main class="container">
+        @* C'est ici que le contenu de chaque page sera affiché *@
+        @* RenderBody() insère le contenu de la vue appelée *@
+        @RenderBody()
+    </main>
+
+    @* ========================================
+       PIED DE PAGE (FOOTER)
+       ======================================== *@
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 - GestSoutenance - Application de gestion des soutenances PFE</p>
+            <p>Développé avec ASP.NET Core MVC</p>
+        </div>
+    </footer>
+
+    @* ========================================
+       SCRIPTS JAVASCRIPT
+       ======================================== *@
+
+    @* jQuery (nécessaire pour certaines fonctionnalités) *@
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    @* Bootstrap JavaScript *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @* Scripts de validation côté client *@
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+
+    @* Section pour les scripts supplémentaires des vues individuelles *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,51 @@
+@* ============================================
+    FICHIER : Views/PFE_Etudiant/Edit.cshtml
+    DESCRIPTION : Formulaire pour modifier une affectation
+    ============================================ *@
+
+@model GestSoutenance.Models.PFE_Etudiant
+
+@{
+    ViewData["Title"] = "Modifier Affectation";
+}
+
+<h1>Modifier l'Affectation</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="ID" />
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="PFEID" class="form-label"></label>
+                <select asp-for="PFEID" asp-items="ViewBag.PFEID" class="form-select">
+                    <option value="">-- Choisir un PFE --</option>
+                </select>
+                <span asp-validation-for="PFEID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="EtudiantId" class="form-label"></label>
+                <select asp-for="EtudiantId" asp-items="ViewBag.EtudiantId" class="form-select">
+                    <option value="">-- Choisir un Étudiant --</option>
+                </select>
+                <span asp-validation-for="EtudiantId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

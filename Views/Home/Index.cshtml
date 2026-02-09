@@ -1,0 +1,89 @@
+@* ============================================
+    FICHIER : Views/Home/Index.cshtml
+    DESCRIPTION : Page d'accueil de l'application
+    ============================================ *@
+
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+@* Jumbotron (bannière d'accueil) *@
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-4">Gestion des Soutenances PFE</h1>
+        <p class="lead">
+            Bienvenue dans l'application de gestion des soutenances de Projets de Fin d'Études.
+            Cette application vous permet de gérer les étudiants, enseignants, sociétés et PFE.
+        </p>
+        <hr class="my-4">
+        <p>Utilisez le menu de navigation pour accéder aux différentes fonctionnalités.</p>
+    </div>
+</div>
+
+@* Cartes de navigation rapide *@
+<div class="row">
+    @* Carte Étudiants *@
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">👨‍🎓 Étudiants</h5>
+                <p class="card-text">Gérer la liste des étudiants inscrits aux PFE.</p>
+                <a asp-controller="Etudiant" asp-action="Index" class="btn btn-primary">
+                    Voir les Étudiants
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @* Carte Enseignants *@
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">👨‍🏫 Enseignants</h5>
+                <p class="card-text">Gérer la liste des enseignants encadrants.</p>
+                <a asp-controller="Enseignant" asp-action="Index" class="btn btn-primary">
+                    Voir les Enseignants
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @* Carte Sociétés *@
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">🏢 Sociétés</h5>
+                <p class="card-text">Gérer les entreprises d'accueil des stages.</p>
+                <a asp-controller="Societe" asp-action="Index" class="btn btn-primary">
+                    Voir les Sociétés
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @* Carte PFE *@
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">📋 Projets de Fin d'Études</h5>
+                <p class="card-text">Gérer les PFE avec leurs encadrants et sociétés.</p>
+                <a asp-controller="PFE" asp-action="Index" class="btn btn-success">
+                    Voir les PFE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @* Carte Affectations *@
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">🔗 Affectations</h5>
+                <p class="card-text">Affecter les étudiants aux différents PFE.</p>
+                <a asp-controller="PFE_Etudiant" asp-action="Index" class="btn btn-success">
+                    Voir les Affectations
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
